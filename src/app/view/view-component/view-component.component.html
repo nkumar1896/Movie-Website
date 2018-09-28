@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Website</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+        <div class="container-flex">
+                <section id="cover">
+                      <div id="cover-caption">
+                          <div class="container">
+                              <div class="offset">
+                                  <h1>Movie Website</h1>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                </div>
+<div class="input">
+<input type="text" class="form-control" id="exampleInputEmail1"   placeholder="Search.." [(ngModel)]="userid">
+<button (click)="search()">Enter</button>
+</div>
+<div class="art" *ngIf=show>
+        <div class="row1">
+          <div class="col-sm-4">
+            <img class="card-img-top" src="http://image.tmdb.org/t/p/w500{{res.poster_path}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{res.original_title}}</h5>
+              <p class="card-text">{{res.overview}}</p>
+            </div>
+          </div>
+       </div>
+  </div>
+<div class="Trending">
+  <h1>Trending Movies</h1>
+ <div class="art" *ngIf="res1">
+            <div class="row" *ngFor="let res1 of res1.results">
+              <div class="card">
+                <img class="card-img-top" src="http://image.tmdb.org/t/p/w500{{res1.poster_path}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{res1.original_title}}</h5>
+                  <p class="card-text">{{res1.overview}}</p>
+                  <a href="#" class="btn btn-primary">More Info</a>
+                </div>
+              </div>
+            </div>
+  </div>
+</div>
+<div class="Upcoming Movies">
+    <h1>Upcoming  Movies</h1>
+   <div class="art" *ngIf="res2">
+      
+              <div class="row" *ngFor="let res2 of res2.results">
+                <div class="card">
+                  <img class="card-img-top" src="http://image.tmdb.org/t/p/w500{{res2.poster_path}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{res2.original_title}}</h5>
+                    <p class="card-text">{{res2.overview}}</p>
+                    <a href="#" class="btn btn-primary">More Info</a>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
